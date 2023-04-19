@@ -23,7 +23,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ resumeRef }) => {
             </h2>
             <div className={`content__body ${showResume ? "content__body--show" : ""}`}>
                 {showResume &&
-                    <Document file={resume}>
+                    <Document file={resume} className="content__body__resume">
                         <Page pageNumber={1} renderTextLayer={false} renderAnnotationLayer={false} />
                     </Document>
                 }

@@ -11,6 +11,8 @@ import { ProjectsSection } from "./ProjectsSection";
 import { ResumeSection } from "./ResumeSection";
 import { FooterSection } from "./FooterSection";
 
+import ShowMenuIcon from "./assets/show-menu.svg";
+import HideMenuIcon from "./assets/hide-menu.svg";
 
 function App() {
   const [navBgColor, setNavBgColor] = useState(false);
@@ -23,6 +25,7 @@ function App() {
   const [lastPath, setLastPath] = useState("home")
   const [showAboutMe, setShowAboutMe] = useState(false)
 
+  const [showMenu, setShowMenu] = useState(false)
 
   useEffect(() => {
     window.document.title = "Elías Castro - Portfolio"
@@ -30,7 +33,7 @@ function App() {
     let _1vh = Math.round(window.innerHeight / 100)
     const handleScroll = () => {
 
-      const COLOR_CHANGE_THRESHOLD = _1vh * 30;
+      const COLOR_CHANGE_THRESHOLD = _1vh * 20;
       if (window.scrollY >= COLOR_CHANGE_THRESHOLD) {
         setNavBgColor(true)
       }
@@ -85,6 +88,7 @@ function App() {
       }
 
       if (resumeRef.current.offsetTop <= maxCurrentViewport) {
+        console.log("Should be resume")
         setCurrentSection("resume")
       }
 
@@ -114,7 +118,7 @@ function App() {
 
   return (
     <div className="App">
-      <nav className={`nav ${navBgColor ? 'color' : ''}`}>
+      <nav className={`nav ${navBgColor ? 'color' : ''} ${showMenu ? 'show-menu' : ''}`}>
         <ul className="nav__list">
           {/* home, about me, skills, projects, resume */}
           <li className={`nav__list__item ${currentSection === "home" ? "nav__list__item-active" : ""}`}>
@@ -164,6 +168,72 @@ function App() {
             </a>
           </li>
         </ul>
+        {
+          showMenu ?
+            <img src={HideMenuIcon} alt="Show Menu" className="nav__show-menu" onClick={() => setShowMenu(!showMenu)} />
+            :
+            <img src={ShowMenuIcon} alt="Hide Menu" className="nav__show-menu" onClick={() => setShowMenu(!showMenu)} />
+        }
+
+        <div className={`nav__menu ${showMenu ? 'show' : ''}`}>
+          <ul className="nav__menu__list">
+            <li className="nav__menu__list__item">
+              <a href="#" className={`nav__menu__list__item__link ${currentSection === "home" ? "nav__menu__list__item__link-active" : ""}`}
+                onClick={(e) => {
+                  // setCurrentSection("home");
+                  setShowMenu(!showMenu)
+                }}
+              >
+                Home
+              </a>
+            </li>
+            <li className="nav__menu__list__item">
+              <a href="#about-me" className={`nav__menu__list__item__link ${currentSection === "about-me" ? "nav__menu__list__item__link-active" : ""}`}
+                onClick={(e) => {
+                  // setCurrentSection("about-me");
+                  setShowMenu(!showMenu)
+
+                }}
+              >
+                About me
+              </a>
+            </li>
+            <li className="nav__menu__list__item">
+              <a href="#skills" className={`nav__menu__list__item__link ${currentSection === "skills" ? "nav__menu__list__item__link-active" : ""}`}
+                onClick={(e) => {
+                  // setCurrentSection("skills");
+                  setShowMenu(!showMenu)
+
+                }}
+              >
+                Skills
+              </a>
+            </li>
+            <li className="nav__menu__list__item">
+              <a href="#projects" className={`nav__menu__list__item__link ${currentSection === "projects" ? "nav__menu__list__item__link-active" : ""}`}
+                onClick={(e) => {
+                  // setCurrentSection("projects");
+                  setShowMenu(!showMenu)
+
+                }}
+              >
+                Projects
+              </a>
+            </li>
+            <li className="nav__menu__list__item">
+              <a href="#resume" className={`nav__menu__list__item__link ${currentSection === "resume" ? "nav__menu__list__item__link-active" : ""}`}
+                onClick={(e) => {
+                  // setCurrentSection("resume");
+                  setShowMenu(!showMenu)
+
+                }}
+              >
+                Resume
+              </a>
+            </li>
+          </ul>
+        </div>
+
       </nav>
       <HomeScreen setCurrentSection={setCurrentSection} homeRef={homeRef} />
       <div className="main-screen">

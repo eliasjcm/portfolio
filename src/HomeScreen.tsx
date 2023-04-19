@@ -25,7 +25,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ setCurrentSection, homeR
 
   return (
     <>
-      <div ref={homeRef} className="home-screen" style={{ backgroundImage: `url(${BackgroundWave})` }}>
+      <div ref={homeRef} className="home-screen">
         <main className="main-content">
           <h2 className="main-content__hello">Hello!</h2>
           <h1 className="main-content__my-name">

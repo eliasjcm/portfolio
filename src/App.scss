@@ -50,7 +50,10 @@ body::-webkit-scrollbar-thumb {
   width: 100vw;
   height: 100vh;
   position: relative;
+  background-image: url("./assets/wave-haikei.svg");
 }
+
+
 
 .home-screen .main-content {
   width: 100%;
@@ -86,6 +89,37 @@ body::-webkit-scrollbar-thumb {
       font-size: 4rem;
       color: $grey;
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-screen .main-content {
+    padding-top: 12.5vh;
+    padding-left: 5vw;
+
+    &__hello {
+      font-size: 2.5rem;
+    }
+
+    &__my-name {
+      font-size: 3.5rem;
+
+      &__name {
+        color: $red;
+      }
+    }
+
+    &__description {
+      font-size: 2rem;
+      margin-top: 5vh;
+      display: flex;
+      flex-direction: column;
+
+      &__role {
+        font-size: 3rem;
+      }
+    }
+
   }
 }
 
@@ -136,6 +170,87 @@ body::-webkit-scrollbar-thumb {
       }
     }
   }
+
+  .nav__menu {
+    display: none;
+  }
+
+  .nav__show-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .nav {
+
+    &.color {
+      background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.6026785714285714) 0%,
+        rgba(0, 0, 0, 0.9075805322128851) 75%,
+        rgba(0, 0, 0, 1) 100%
+      );
+    }
+
+    
+    &.show-menu {
+      height: 100vh;
+      background-color: #000000;
+      padding-right: 0;
+      .nav__show-menu {
+        margin-right: 5vh;
+      }
+    }
+
+    &__list {
+      display: none;
+    }
+
+    .nav__show-menu {
+      display: block;
+      margin-left: auto;
+      font-size: 2rem;
+      color: $white;
+      cursor: pointer;
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+        saturate(7500%) hue-rotate(322deg) brightness(103%) contrast(100%);
+    }
+
+    .nav__menu.show {
+      display: block;
+    }
+
+    .nav__menu {
+      &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 78vh;
+        list-style: none;
+
+        & li {
+          a {
+            text-decoration: none;
+            color: $white;
+            font-size: 3rem;
+
+            &:hover {
+              color: lighten($red, 10%);
+            }
+          }
+        }
+
+        li + li {
+          margin-top: 2rem;
+        }
+
+        .nav__menu__list__item__link-active {
+          border-bottom: 5px solid $red;
+        }
+      }
+    }
+  }
 }
 
 .down-arrow-container {
@@ -173,6 +288,12 @@ body::-webkit-scrollbar-thumb {
   &__text {
     font-size: 1.5rem;
     color: $grey;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .down-arrow-container {
+    margin-bottom: 10vh;
   }
 }
 
@@ -215,7 +336,10 @@ body::-webkit-scrollbar-thumb {
   .content__body {
     border: 4px solid $red;
     border-radius: 10px;
-    padding: 2rem 2.5rem;
+    padding: 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
 
     &__item {
       &__title {
@@ -282,9 +406,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 #c-svg {
-  filter: brightness(0) saturate(100%) invert(20%) sepia(99%) saturate(2030%) hue-rotate(191deg) brightness(90%) contrast(98%);
-
-
+  filter: brightness(0) saturate(100%) invert(20%) sepia(99%) saturate(2030%)
+    hue-rotate(191deg) brightness(90%) contrast(98%);
 }
 
 .content-projects {
@@ -398,6 +521,42 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .content-projects {
+    .content__body {
+      &__item {
+        padding: 1rem 0.5rem;
+        flex-direction: column;
+        justify-content: center;
+
+        &__img {
+          img {
+          }
+        }
+
+        &__info {
+          margin-left: 0;
+          margin-top: 2vh;
+
+          &__links {
+            &__link {
+              flex: 0 0 48%;
+              text-align: center;
+            }
+
+            &__link + &__link {
+            }
+          }
+        }
+      }
+
+      .content__body__item + .content__body__item {
+        margin-top: 5vh;
+      }
+    }
+  }
+}
+
 .content-resume {
   margin-top: 5vh;
   padding-bottom: 5vh;
@@ -452,6 +611,27 @@ body::-webkit-scrollbar-thumb {
 
     button + button {
       margin-left: 4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content-resume {
+    .content__body {
+      button {
+        margin-top: 3vh;
+        margin-left: 0;
+      }
+
+
+      button + button {
+        margin-left: 2vw;
+      }
+    }
+
+    .react-pdf__Page__canvas {
+      width: 95vw !important;
+      height: auto !important;
     }
   }
 }
