@@ -21,9 +21,12 @@ function App() {
   const projectsRef = useRef<HTMLDivElement>(null);
   const resumeRef = useRef<HTMLDivElement>(null);
   const [lastPath, setLastPath] = useState("home")
+  const [showAboutMe, setShowAboutMe] = useState(false)
 
 
   useEffect(() => {
+    window.document.title = "Elías Castro - Portfolio"
+
     let _1vh = Math.round(window.innerHeight / 100)
     const handleScroll = () => {
 
@@ -47,7 +50,7 @@ function App() {
       console.log("minCurrentViewport", minCurrentViewport, "mediumCurrentViewport", mediumCurrentViewport, "maxCurrentViewport", maxCurrentViewport)
       // if lastPath changed, then update currentSection
       const currentPath = window.location.pathname.split("/")[1]
-      
+
       if (lastPath !== currentSection) {
         setCurrentSection(lastPath)
         console.log("lastPath", lastPath, "currentSection", currentSection)
@@ -56,7 +59,11 @@ function App() {
       if (!homeRef.current || !aboutMeRef.current || !skillsRef.current || !projectsRef.current || !resumeRef.current) {
         return;
       }
-   
+
+
+      if (aboutMeRef.current.offsetTop <= maxCurrentViewport && !showAboutMe) {
+        setShowAboutMe(true)
+      }
 
       if (homeRef.current.offsetTop <= mediumCurrentViewport && minCurrentViewport <= aboutMeRef.current.offsetTop) {
         setCurrentSection("home")
@@ -83,23 +90,26 @@ function App() {
 
     }
     window.addEventListener('scroll', handleScroll);
-  }, []);
+  }, [])
 
   useEffect(() => {
+    if (showAboutMe) {
 
-    new Typewriter('#aboutme-text', {
-      strings: [`
-      Hello and welcome to my portfolio! My name is <span class="focus-text">Elías Castro</span> and I'm a <span class="focus-text">computer engineering</span> student in my final year of studies. I also have a strong interest in <span class="focus-text">web development</span> and have been working my skills in this area for the last years.
-<br /><br />
-      I'm excited to put my skills to the test and am actively seeking new opportunities to grow as a developer. Please don't hesitate to reach out. Thank you for stopping by!
-      `],
-      autoStart: true,
-      delay: 20,
-      deleteSpeed: 99999999999999999999999
-    });
+      new Typewriter('#aboutme-text', {
+        strings: [`
+        Hello and welcome to my portfolio! My name is <span class="focus-text">Elías Castro</span> and I'm a <span class="focus-text">computer engineering</span> student in my final year of studies. I also have a strong interest in <span class="focus-text">web development</span> and have been working my skills in this area for the last years.
+        <br /><br />
+        I'm excited to put my skills to the test and am actively seeking new opportunities to grow as a developer. Please don't hesitate to reach out. Thank you for stopping by!
+        `],
+        autoStart: true,
+        delay: 20,
+        deleteSpeed: 99999999999999999999999
+      });
+    }
 
-    window.document.title = "Elías Castro - Portfolio"
-  }, [])
+
+  }, [showAboutMe])
+
 
 
   return (
@@ -156,7 +166,7 @@ function App() {
         </ul>
       </nav>
       <HomeScreen setCurrentSection={setCurrentSection} homeRef={homeRef} />
-      <div className="aboutMe-screen">
+      <div className="main-screen">
         <main className="main-content">
           <div className="content" ref={aboutMeRef}>
             <h2 id="about-me" className="content__title"><span className="content__title-init">#</span> <span className="content__title-name">About me</span></h2>
@@ -166,16 +176,9 @@ function App() {
           <SkillsSection skillsRef={skillsRef} />
           <ProjectsSection projectsRef={projectsRef} />
           <ResumeSection resumeRef={resumeRef} />
-          <FooterSection />
         </main>
       </div>
-      {/* 
-      <div className="go-top">
-        <a href="#" className="go-top__link">
-          <img src={arrowImg} alt="Go top" />
-        </a>
-      </div> */}
-      {/* <AboutMeScreen /> */}
+      <FooterSection />
     </div>
   );
 }

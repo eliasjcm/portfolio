@@ -1,5 +1,5 @@
 import { Document, Page, pdfjs } from 'react-pdf';
-import resume from './assets/resume.pdf';
+import resume from './assets/EliasJosueCastroMontero_Resume.pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 import eyeSVG from "./assets/eye.svg";
@@ -37,7 +37,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ resumeRef }) => {
                     </button>
                 )}
                 <button className="content__body__button">
-                    <a href="resume.pdf" target="_blank" rel="noreferrer">
+                    <a href="https://drive.google.com/u/0/uc?id=1U-kb_ZrUu82-OwNSbO-Z4QfQ-NozwPdL&export=download" target="_blank" rel="noreferrer">
                         <img src={downloadSVG} alt="download" />
                         Download Resume
                     </a>

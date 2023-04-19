@@ -26,23 +26,23 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projectsRef })
                         <ul className="content__body__item__info__list">
                             <li className="content__body__item__info__list__item">
                                 <p className="content__body__item__info__list__item__text">
-                                    Movies and TV shows applications that allows users to search for movies, TV shows and actors, and view details about them.
+                                    Movies and TV shows application that allows users to search for movies, TV shows and actors, and view details about them.
                                 </p>
                             </li>
                             <li className="content__body__item__info__list__item">
                                 <p className="content__body__item__info__list__item__text">
-                                    <span className="focus-text">Front-End</span> development based on React.js, React Router and SCSS.
+                                    <span className="focus-text">Front-End</span> development based on React, React Router and SASS.
                                 </p>
                             </li>
                             <li className="content__body__item__info__list__item">
                                 <p className="content__body__item__info__list__item__text">
-                                    Extensive use of the <span className="focus-text-grey">The Movie Database (TMDB) API</span> to provide <span className="focus-text">authentic</span> and <span className="focus-text">up-to-date</span> information.
+                                    Extensive use of the <span className="focus-text-grey">The Movie Database (TMDB)</span> API to provide <span className="focus-text">authentic</span> and <span className="focus-text">up-to-date</span> information.
                                 </p>
                             </li>
                         </ul>
                         <div className="content__body__item__info__links">
                             <a
-                                href="https://github.com/alexandru-georgescu/chat-app"
+                                href="https://brave-flower-083cf0410.azurestaticapps.net/"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="content__body__item__info__links__link"
@@ -50,7 +50,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projectsRef })
                                 Live Demo
                             </a>
                             <a
-                                href="https://github.com/alexandru-georgescu/chat-app"
+                                href="https://github.com/eliasjcm/MoviesApp"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="content__body__item__info__links__link"
@@ -92,7 +92,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projectsRef })
                         </ul>
                         <div className="content__body__item__info__links">
                             <a
-                                href="https://github.com/alexandru-georgescu/chat-app"
+                                href="https://react-chat-app-tst.herokuapp.com/"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="content__body__item__info__links__link"
@@ -100,7 +100,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projectsRef })
                                 Live Demo
                             </a>
                             <a
-                                href="https://github.com/alexandru-georgescu/chat-app"
+                                href="https://github.com/eliasjcm/react-chat-app"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="content__body__item__info__links__link"

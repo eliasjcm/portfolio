@@ -68,10 +68,10 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skillsRef }) => {
                             <img src={JavaIcon} alt="Java" />
                         </li>
                         <li className="content__body__item__list__item">
-                            <img src={CppIcon} alt="C++" />
+                            <img src={CIcon} alt="C" />
                         </li>
                         <li className="content__body__item__list__item">
-                            <img src={CIcon} alt="C" />
+                            <img src={CppIcon} id="c-svg" alt="C++" />
                         </li>
                     </ul>
                 </div>
@@ -108,10 +108,10 @@ export const SkillsSection: React.FC<SkillsSectionProps> = ({ skillsRef }) => {
                             <img src={GitIcon} alt="Git" />
                         </li>
                         <li className="content__body__item__list__item">
-                            <img src={GithubIcon} alt="Github" />
+                            <img src={GithubIcon} id="github-svg" alt="Github" />
                         </li>
                         <li className="content__body__item__list__item">
-                            <img src={AWSIcon} alt="AWS" />
+                            <img src={AWSIcon} id="aws-svg" alt="AWS" />
                         </li>
                         <li className="content__body__item__list__item">
                             <img src={AzureIcon} alt="Azure" />
