@@ -42,7 +42,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projectsRef })
                         </ul>
                         <div className="content__body__item__info__links">
                             <a
-                                href="https://brave-flower-083cf0410.azurestaticapps.net/"
+                                href="https://movies-app-eliasjcm.netlify.app/"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="content__body__item__info__links__link"
