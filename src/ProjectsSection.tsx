@@ -42,10 +42,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projectsRef })
                         </ul>
                         <div className="content__body__item__info__links">
                             <a
-                                href="https://brave-flower-083cf0410.azurestaticapps.net/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="content__body__item__info__links__link"
+                                className="content__body__item__info__links__link disabled"
+                                title="Not available yet"
                             >
                                 Live Demo
                             </a>

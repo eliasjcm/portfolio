@@ -37,7 +37,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ resumeRef }) => {
                     </button>
                 )}
                 <button className="content__body__button">
-                    <a href="https://drive.google.com/u/0/uc?id=1U-kb_ZrUu82-OwNSbO-Z4QfQ-NozwPdL&export=download" target="_blank" rel="noreferrer">
+                    <a href="https://drive.google.com/u/0/uc?id=1LZKcZ8WZGGCeoWQXNpZ-mkVUbiZ2sd12&export=download" target="_blank" rel="noreferrer">
                         <img src={downloadSVG} alt="download" />
                         Download Resume
                     </a>

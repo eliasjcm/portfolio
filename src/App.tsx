@@ -101,9 +101,10 @@ function App() {
 
       new Typewriter('#aboutme-text', {
         strings: [`
-        Hello and welcome to my portfolio! My name is <span class="focus-text">Elías Castro</span> and I'm a <span class="focus-text">computer engineering</span> student in my final year of studies. I also have a strong interest in <span class="focus-text">web development</span> and have been working my skills in this area for the last years.
-        <br /><br />
-        I'm excited to put my skills to the test and am actively seeking new opportunities to grow as a developer. Please don't hesitate to reach out. Thank you for stopping by!
+      Hello and welcome to my portfolio! My name is <span class="focus-text">Elías Castro</span>, and I'm a <span class="focus-text">Full-Stack Software Engineer</span> with a passion for building intuitive, scalable web applications.
+      <br /><br />
+      I’ve worked across the stack using modern technologies like React, Node.js, and .NET, and I'm always looking for opportunities to solve meaningful problems, learn new tools, and grow as a developer. Thanks for stopping by — feel free to reach out!
+
         `],
         autoStart: true,
         delay: 20,
