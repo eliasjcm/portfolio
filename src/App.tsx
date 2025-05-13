@@ -28,7 +28,7 @@ function App() {
   const [showMenu, setShowMenu] = useState(false)
 
   useEffect(() => {
-    window.document.title = "Elías Castro - Portfolio"
+    window.document.title = "Elias Castro - Portfolio"
 
     let _1vh = Math.round(window.innerHeight / 100)
     const handleScroll = () => {
